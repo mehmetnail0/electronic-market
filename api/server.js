@@ -15,14 +15,12 @@ const userRoute = require("./routes/users.js");
 
 dotenv.config();
 
-const connect = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO_URI);
-    console.log("Connected to mongoDB");
-  } catch (error) {
-    throw error;
-  }
-};
+// mongodb
+
+async function connect() {
+  let db = await mongoose.connect(process.env.MONGO_URI);
+  return db;
+}
 
 // middlewares
 app.use(logger("dev"));
@@ -35,7 +33,18 @@ app.use("/api/bills", billRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 
-app.listen(port, () => {
-  connect();
-  console.log(`Example app listening on port ${port}`);
-});
+/* Start Server - only when have valid connection */
+connect()
+  .then(() => {
+    try {
+      app.listen(port, () => {
+        console.log("Server Started and connected to MongoDB!");
+      });
+    } catch (error) {
+      console.log("Cannot connect to the server");
+    }
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("Invalid database connection... ");
+  });
