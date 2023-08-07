@@ -17,4 +17,4 @@ This app includes the following technologies:
 -TailWind CSS
 -Ant Design CSS Components
 
-[resim](www.google.com)
+[resim](31BEE0EC-E1AB-404F-B7FF-071287E0B4C6.jpeg)
