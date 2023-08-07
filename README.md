@@ -10,11 +10,11 @@ Membership/authentication system is also available. You can also analyze the ord
 You can also print invoices with the billing system.
 
 This app includes the following technologies:
->ReactJS
->Redux State System
->MongoDB noSQL Database
->NodeJS ExpressJS Web Server
->TailWind CSS
+>ReactJS  
+>Redux State System  
+>MongoDB noSQL Database  
+>NodeJS ExpressJS Web Server  
+>TailWind CSS  
 >Ant Design CSS Components
 
 ![B34DFD0A-BA58-4D0A-A3E7-14D18A3C7093](https://github.com/mehmetnail0/electronic-market/assets/54910442/28ead205-4f3a-4a11-9949-efd252695ec9)
